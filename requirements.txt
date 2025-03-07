@@ -4,3 +4,4 @@ PyPDF2
 scikit-learn
 pdfplumber==0.6.0
 python-docx
+spacy==3.4.0
