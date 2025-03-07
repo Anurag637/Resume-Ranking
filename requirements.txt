@@ -3,3 +3,4 @@ pandas
 PyPDF2
 scikit-learn
 pdfplumber==0.6.0
+python-docx
