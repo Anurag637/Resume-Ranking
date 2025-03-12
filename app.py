@@ -6,18 +6,20 @@ Created by Anurag Pandey
 import streamlit as st
 import pdfplumber
 import docx
-import spacy
 import pandas as pd
 import subprocess
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import spacy
+import spacy.cli
 
-# Ensure Spacy model is installed
+# Ensure spaCy model is installed at runtime
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"], check=True)
+    spacy.cli.download("en_core_web_sm")  # Uses spacy's internal download function
     nlp = spacy.load("en_core_web_sm")
+
 
 # Initialize session state for history
 if "history" not in st.session_state:
