@@ -16,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"], check=True)
     nlp = spacy.load("en_core_web_sm")
 
 # Initialize session state for history
@@ -149,7 +149,7 @@ footer = """
     </style>
     <div class="footer">
         🔗 Connect with me: 
-        <a href="www.linkedin.com/in/anurag-pandey-15559534a" target="_blank">LinkedIn</a> | 
+        <a href=""https://www.linkedin.com/in/anurag-pandey-15559534a" target="_blank">LinkedIn</a> | 
         <a href="https://github.com/Anurag637" target="_blank">GitHub</a>
     </div>
 """
